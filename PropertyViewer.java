@@ -29,10 +29,15 @@ public class PropertyViewer
         //initializes the property object by giving it the values of the first property in the array stored in the portfolio class.
         property = portfolio.getProperty(indexOfProperty);
         //Calls the show methods in the PropertyViewerGUI class to display data of first property when the application opens.
-        gui.showProperty(property);
-        gui.showID(property);
+        displayPropertyData();
         //Calls and updates the average property price method.
         averagePropertyPrice();
+    }
+
+    private void displayPropertyData(){
+        gui.showProperty(property);
+        gui.showID(property);
+        gui.showFavourite(property);
     }
 
     /**
@@ -46,9 +51,7 @@ public class PropertyViewer
         //Updates index of property, gets the data of such property, and displays it
         indexOfProperty= (indexOfProperty + 1) % numOfProperties;
         property = portfolio.getProperty(indexOfProperty);
-        gui.showProperty(property);
-        gui.showID(property);
-        gui.showFavourite(property);
+        displayPropertyData();
         //Updates the number of properties viewed and average property price values
         numOfPropertiesViewed++;
         averagePropertyPrice();
@@ -63,9 +66,7 @@ public class PropertyViewer
         //Updates index of property, gets the data of such property, and displays it
         indexOfProperty = (numOfProperties + indexOfProperty - 1) % numOfProperties;
         property = portfolio.getProperty(indexOfProperty);
-        gui.showProperty(property);
-        gui.showID(property);
-        gui.showFavourite(property);
+        displayPropertyData();
         //Updates the number of properties viewed and average property price values
         numOfPropertiesViewed++;
         averagePropertyPrice();
@@ -111,7 +112,7 @@ public class PropertyViewer
     public void averagePropertyPrice()
     {   
         totalPropertyPrice = totalPropertyPrice + property.getPrice();
-        averagePropertyPrice = (totalPropertyPrice/numOfPropertiesViewed);
+        averagePropertyPrice = totalPropertyPrice/numOfPropertiesViewed;
     }
     
     /**

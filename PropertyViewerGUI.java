@@ -13,7 +13,8 @@ import java.util.Iterator;
  * PropertyViewerGUI provides the GUI for the project. It displays the property
  * and strings, and it listens to button clicks.
  * Bernardo Guterres
- * k23092429k230
+ * k23092429
+k230
  */
 public class PropertyViewerGUI
 {
@@ -30,7 +31,6 @@ public class PropertyViewerGUI
     private JTextField roomTypeLabel;
     private JTextField priceLabel;
     private JTextField minNightsLabel;
-    private JTextArea descriptionLabel;
     private JTextField numberOfPropertiesViewed;
     private JTextField averagePropertyPrice;
     
